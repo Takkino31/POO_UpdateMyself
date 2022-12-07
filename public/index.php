@@ -1,11 +1,10 @@
 <?php
 
-use Class\OfficeReservation;
- 
+use Class\CoffeeMachine;
+use Class\PremiumCoffeeMachine;
 
 require ('./vendor/autoload.php');
 
-
-// $officeReservation = new OfficeReservation("");
-
-var_dump(OfficeReservation::getInstance());
+$coffeeMachine  = new CoffeeMachine(1);
+$premiumCoffeeMachine  = new PremiumCoffeeMachine(12);
+$premiumCoffeeMachine->select('vanilla');
