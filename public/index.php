@@ -1,10 +1,11 @@
 <?php
 
-namespace Class;
+use Class\OfficeReservation;
  
+
 require ('./vendor/autoload.php');
 
 
-$officeReservation = new OfficeReservation("Reservation du 30 janvier");
+// $officeReservation = new OfficeReservation("");
 
-var_dump($officeReservation::getCount());
+var_dump(OfficeReservation::getInstance());

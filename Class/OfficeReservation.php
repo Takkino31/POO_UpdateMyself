@@ -6,15 +6,19 @@ namespace Class;
 class OfficeReservation
 {
 
-    private static int $count = 011 ;
-
-    public function __construct(
-        public string $information
+    private static ?self $_instance =null;
+    private function __construct(
+        
     )
-    {}
-
-    public static function getCount(): int
     {
-        return self::$count;
+        echo 'Nouvelle instance';
+    }
+
+    public static function getInstance(): self
+    {
+        if (is_null(self::$_instance)) {
+            self::$_instance = new self ;
+        }
+        return self::$_instance;
     }
 }
