@@ -1,30 +1,20 @@
 <?php
+
+use Class\Reservation;
+use Class\Enums\OfficeStatus;
+
 require ('./vendor/autoload.php');
 
-// require_once('./Class/Cart.php');
-// require_once('./Class/Paypal/Payment.php');
-// require_once('./Class/Stripe/Payment.php');
-// require_once('./Class/Users/User.php');
-
-// $cart = new Cart(2,200);
-// $cart->setTotalPrice(100);
-// $cart->discount(10);
-// var_dump($cart->getTotalPrice());
+// $status = 'en attente';
 
 
-// spl_autoload_register(function($class){
-//     $path = dirname(__DIR__).'/'.str_replace('\\','/',$class). '.php';
-//     if (file_exists($path)) {
-//         require($path);
-//     }
-//     var_dump($path);
-// });
-
-use \Class\Paypal\Payment;
-
-$paymentPaypal = new Payment();
-$paymentStripe = new Class\Stripe\Payment();
+// if ($status === Reservation::APPROVAL_PENDING) {
+//     echo 'en attente !!!';
+// }
 
 
-var_dump($paymentPaypal);
-var_dump($paymentStripe);
+$reservation = new Reservation();
+
+
+if (OfficeStatus::APPROVAL_PENDING===$reservation->status) echo 'en attente';
+var_dump($reservation);
