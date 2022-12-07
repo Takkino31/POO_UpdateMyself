@@ -1,20 +1,10 @@
 <?php
 
-use Class\Reservation;
-use Class\Enums\OfficeStatus;
-
+namespace Class;
+ 
 require ('./vendor/autoload.php');
 
-// $status = 'en attente';
 
+$officeReservation = new OfficeReservation("Reservation du 30 janvier");
 
-// if ($status === Reservation::APPROVAL_PENDING) {
-//     echo 'en attente !!!';
-// }
-
-
-$reservation = new Reservation();
-
-
-if (OfficeStatus::APPROVAL_PENDING===$reservation->status) echo 'en attente';
-var_dump($reservation);
+var_dump($officeReservation::getCount());
